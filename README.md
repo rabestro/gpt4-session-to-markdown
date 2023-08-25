@@ -23,8 +23,8 @@ Replace input.json with the name of your input JSON file containing the GPT-4 ch
 ## Example
 For an example of input JSON data and the corresponding Markdown output, please refer to the following:
 
-- Sample Input JSON Data
-- Sample Output Markdown
+- [Sample Input JSON Data](sample-input.json)
+- [Sample Output Markdown](sample-output.md)
 
 ## License
 This project is open-source and released under the [MIT Licens](LICENSE).
