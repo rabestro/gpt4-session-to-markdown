@@ -1,4 +1,4 @@
-#!/usr/bin/env jq -r
+#!/usr/bin/env jq --raw-output --from-file
 
 #
 # Copyright (c) 2023 Jegors Čemisovs
