@@ -26,5 +26,15 @@ For an example of input JSON data and the corresponding Markdown output, please 
 - [Sample Input JSON Data](sample-input.json)
 - [Sample Output Markdown](sample-output.md)
 
+## Example Usage
+The following is an example of how this script can be used to convert GPT-4 chat session JSON data into Markdown format:
+
+```bash
+cd docs
+../gpt4-session-to-md.jq github-pages.json > github-pages.md
+```
+
+- [Sample Session with AI](github-pages.md)
+
 ## License
 This project is open-source and released under the [MIT License](LICENSE).
