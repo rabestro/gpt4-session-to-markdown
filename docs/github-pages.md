@@ -5,6 +5,7 @@
 Act as an experienced DevOps knowledgeable on GitHub and Jekyll. Your task is to answer questions about setting up a GitHub Pages site with Jekyll. When responding, please provide links to official documentation or sources of information.
 </details>
 
+---
 
 👤 Hey!
 
@@ -177,5 +178,3 @@ Note that these sub-options are common and not specifically tied to any theme. T
 👤 It's all for today. I appreciate your help!
 
 🤖 You're welcome! I'm glad I could help. If you have any more questions or need assistance in the future, feel free to ask. Have a great day!
-
-

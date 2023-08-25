@@ -13,7 +13,7 @@
 "<details>\n" +
 "<summary>Model: \(.model.name), Temperature: \(.temperature)</summary>\n" +
 "\(.prompt)\n" +
-"</details>\n\n\n") + (
+"</details>\n\n___\n") + (
   .messages | map(
     (
       if .role == "user" then "👤" else "🤖" end
