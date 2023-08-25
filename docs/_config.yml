@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 
 title: Chat Session to Markdown
-description: >
+description: >-
   GPT-4 Chat Session to Markdown Converter: A handy command-line tool that uses JQ to convert GPT-4 chat session JSON data into a more readable and visually appealing Markdown format.
 
 author:
@@ -19,3 +19,7 @@ author:
 # social links
 twitter_username: rabestro
 github_username:  rabestro
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5

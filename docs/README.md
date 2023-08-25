@@ -38,3 +38,12 @@ cd docs
 
 ## License
 This project is open-source and released under the [MIT License](LICENSE).
+
+## Some other ChatGPT-4 sessions
+
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <small>{{ post.date | date: "%B %d, %Y" }}</small>
+  </li>
+{% endfor %}
