@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Binary Tree Maximum Path Sum"
-date: 2023-08-24
+date: 2023-08-24 00:00:00 -0000
 categories: [ai, unit test, java, gpt-4]
 ---
 
