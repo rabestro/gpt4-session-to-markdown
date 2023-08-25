@@ -4,8 +4,8 @@ title: Chat Session to Markdown
 description: >
   GPT-4 Chat Session to Markdown Converter: A handy command-line tool that uses JQ to convert GPT-4 chat session JSON data into a more readable and visually appealing Markdown format.
 
-url: https://rabestro.github.io/gpt4-session-to-markdown/
-repository: rabestro/gpt4-session-to-markdown
+#url: https://rabestro.github.io/gpt4-session-to-markdown/
+#repository: rabestro/gpt4-session-to-markdown
 
 author:
   name: "Jegors Čemisovs"
