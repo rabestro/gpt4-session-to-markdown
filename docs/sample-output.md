@@ -69,18 +69,6 @@ Of course, this is just a starting point. Depending on the structure of your JSO
             "name": "GPT-4"
           },
           "role": "assistant"
-        },
-        {
-          "role": "user",
-          "content": "How to get random number from 1 to 6?"
-        },
-        {
-          "content": "To generate a random number between 1 and 6, you can use the `java.util.Random` class. Here's a code snippet demonstrating how to do this:\n\n```java\nimport java.util.Random;\n\npublic class RandomNumberExample {\n    public static void main(String[] args) {\n        Random random = new Random();\n        int randomNumber = random.nextInt(6) + 1;\n        System.out.println(\"Random number between 1 and 6: \" + randomNumber);\n    }\n}\n```\n\nIn this example, the `nextInt(6)` method generates a random number between 0 (inclusive) and 6 (exclusive). By adding 1 (`random.nextInt(6) + 1`), you effectively generate a random number between 1 and 6.\n\nYou can read more about the `Random` class and its methods in the official Java documentation: [java.util.Random](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html)",
-          "model": {
-            "id": "gpt-4",
-            "name": "GPT-4"
-          },
-          "role": "assistant"
         }
       ],
       "model": {
@@ -90,7 +78,7 @@ Of course, this is just a starting point. Depending on the structure of your JSO
         "maxLength": 24000,
         "requestLimit": 6000
       },
-      "prompt": "Act as an Oracle Certified Professional: Java SE 17 Developer.\n\nWhen mentioning JDK classes and methods, add links to the official documentation. \n\nPlease note that the documentation address for Java 17 has been changed. Change links like https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java.base/java.util/Random.html to https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html\n\nFollow Java best practices when generating code snippets.",
+      "prompt": "Act as an Oracle Certified Professional: Java SE 17 Developer.\n\nWhen mentioning JDK classes and methods, add links to the official documentation.",
       "temperature": 0.1,
       "folderId": null,
       "replay": {
@@ -116,29 +104,6 @@ Hello!
 **Assistant**
 
 Hello! How can I help you today? If you have any questions related to Java SE 17 or need assistance with anything related to Java development, feel free to ask. I am an Oracle Certified Professional: Java SE 17 Developer and I'm here to help.
-
-**User**:
-How to get random number from 1 to 6?
-
-**Assistant**
-
-To generate a random number between 1 and 6, you can use the `java.util.Random` class. Here's a code snippet demonstrating how to do this:
-
-\```java
-import java.util.Random;
-
-public class RandomNumberExample {
-    public static void main(String[] args) {
-        Random random = new Random();
-        int randomNumber = random.nextInt(6) + 1;
-        System.out.println(\"Random number between 1 and 6: \" + randomNumber);
-    }
-}
-\```
-
-In this example, the `nextInt(6)` method generates a random number between 0 (inclusive) and 6 (exclusive). By adding 1 (`random.nextInt(6) + 1`), you effectively generate a random number between 1 and 6.
-
-You can read more about the `Random` class and its methods in the official Java documentation: [java.util.Random](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html)
 ```
 
 Can you help me?
@@ -176,30 +141,8 @@ Hello!
 
 🤖 **ASSISTANT**:
 
-Hello! How can I help you today? If you have any questions related to Java SE 17 or need assistance with anything related to Java development, feel free to ask. I am an Oracle Certified Professional: Java SE 17 Developer and I'm here to help.
-
-👤 **USER**:
-How to get random number from 1 to 6?
-
-🤖 **ASSISTANT**:
-
-To generate a random number between 1 and 6, you can use the `java.util.Random` class. Here's a code snippet demonstrating how to do this:
-
-```java
-import java.util.Random;
-
-public class RandomNumberExample {
-    public static void main(String[] args) {
-        Random random = new Random();
-        int randomNumber = random.nextInt(6) + 1;
-        System.out.println(\"Random number between 1 and 6: \" + randomNumber);
-    }
-}
-```
-
-In this example, the `nextInt(6)` method generates a random number between 0 (inclusive) and 6 (exclusive). By adding 1 (`random.nextInt(6) + 1`), you effectively generate a random number between 1 and 6.
-
-You can read more about the `Random` class and its methods in the official Java documentation: [java.util.Random](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html)
+Hello! How can I help you today? 
+If you have any questions related to Java SE 17 or need assistance with anything related to Java development, feel free to ask. I am an Oracle Certified Professional: Java SE 17 Developer and I'm here to help.
 ```
 
 This script assumes that your JSON data is in a file named `input.json` and the output will be saved as `output.md`.
