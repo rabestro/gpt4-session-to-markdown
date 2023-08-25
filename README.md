@@ -27,4 +27,4 @@ For an example of input JSON data and the corresponding Markdown output, please 
 - [Sample Output Markdown](sample-output.md)
 
 ## License
-This project is open-source and released under the [MIT Licens](LICENSE).
+This project is open-source and released under the [MIT License](LICENSE).
