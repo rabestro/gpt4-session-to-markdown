@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+#
+# Copyright (c) 2023 Jegors Čemisovs
+# License: MIT
+# Repository: https://github.com/rabestro/gpt4-session-to-markdown
+#
+# Converts GPT-4 chat session JSON data to markdown format and
+# adds YAML front matter to the top of the file to prepare it
+# for publishing on the Jekyll site.
+#
+# Usage:
+#   ./post <file.json>
+#
+
+# set these variables as needed for your environment
+readonly POSTS_DIR="../_posts"
+readonly TIMEZONE="+0300"
+readonly CATEGORIES="AI"
+readonly TAGS="ai"
+
+create_file_name() {
+  jq --raw-output '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$1"
+}
+
+conversation() {
+  local -r file_json="$1"
+  cat <<EOF
+
+## The AI Conversation Log
+
+$(jq --raw-output '.history[0].messages | map((
+  if .role == "user" then "👤" else "🤖" end
+  )+ " \(.content)\n") | join("\n")' "$file_json")
+
+EOF
+}
+
+has_mermaid() {
+  jq 'any(.history[].messages[]; .content | contains("```mermaid"))' "$1"
+}
+
+main() {
+  local -r file_json="$1"
+  local -r file_name=$(create_file_name "$file_json")
+  local -r current_date=$(date '+%Y-%m-%d')
+  local -r current_time=$(date '+%H:%M:%S')
+  local -r file_post="${POSTS_DIR}/$current_date-$file_name.md"
+
+  local -r title=$(jq --raw-output '.history[0].name' "$file_json")
+  local -r prompt=$(jq --raw-output '.history[0].prompt' "$file_json")
+
+  echo "Title: $title"
+  echo "File: $file_name"
+
+  cat << EOF > "$file_post"
+---
+title: "$title"
+date: $current_date $current_time $TIMEZONE
+categories: [$CATEGORIES]
+tags: [$TAGS]
+mermaid: $(has_mermaid "$file_json")
+---
+{% raw %}
+
+## The system prompt used
+
+$prompt
+
+$(conversation "$file_json")
+
+{% endraw %}
+EOF
+}
+
+main "$1"

@@ -1,32 +1,44 @@
-# GPT-4 Session to Markdown Converter
+# GPT-4 Session to Markdown
 
-This repository contains a JQ script called `gpt4-session-to-md.jq` that converts GPT-4 chat session JSON data into a more readable Markdown format.
+This script converts GPT-4 chat session JSON data to markdown format and adds YAML front matter to the top of the file to prepare it for publishing on a Jekyll site.
 
 ## Requirements
 
-- [JQ](https://stedolan.github.io/jq/) command-line utility.
+- [jq](https://stedolan.github.io/jq/) - A lightweight and flexible command-line JSON processor.
 
 ## Usage
 
-1. Ensure the `gpt4-session-to-md.jq` script has executable permissions:
-    ```bash
-    chmod +x gpt4-session-to-md.jq
-    ```
-2. Use the script to convert your GPT-4 chat session JSON data into Markdown format:
+1. Clone the repository:
+```shell
+git clone https://github.com/rabestro/gpt4-session-to-markdown.git
+cd gpt4-session-to-markdown
+```
 
-    ```bash
-    ./gpt4-session-to-md.jq input.json > output.md
-    ```
+2. Make the script executable:
+```shell
+chmod +x post
+```
 
-Replace input.json with the name of your input JSON file containing the GPT-4 chat session data and output.md with the desired name for the output Markdown file.
+3. Run the script with the JSON file as an argument:
+```shell
+./post <file.json>
+```
+   Replace `<file.json>` with the path to your GPT-4 chat session JSON file.
 
-## Example
-For an example of input JSON data and the corresponding Markdown output, please refer to the following:
+## Configuration
 
-- [Sample Input JSON Data](sample-input.json)
-- [Sample Output Markdown](sample-output.md)
+You can customize the script by modifying the following variables at the beginning of the `post` script:
 
-- [Sample Session with AI](github-pages.md)
+- `POSTS_DIR`: The directory where the generated markdown files will be saved. Default is `../_posts`.
+- `TIMEZONE`: The timezone to be used in the YAML front matter. Default is `+0300`.
+- `CATEGORIES`: The categories to be used in the YAML front matter. Default is `AI`.
+- `TAGS`: The tags to be used in the YAML front matter. Default is `ai`.
 
 ## License
-This project is open-source and released under the [MIT License](LICENSE).
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Showcases
+
+- [GPT-4 Session to Markdown](https://rabestro.github.io/gpt4-session-to-markdown/) - A Jekyll site that showcases the script.
+- [My Tech Blog](https://rabestro.github.io/) - My personal tech blog where I publish my GPT-4 chat sessions.
