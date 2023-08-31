@@ -40,5 +40,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Showcases
 
-- [GPT-4 Session to Markdown](https://rabestro.github.io/gpt4-session-to-markdown/) - A Jekyll site that showcases the script.
 - [My Tech Blog](https://rabestro.github.io/) - My personal tech blog where I publish my GPT-4 chat sessions.
