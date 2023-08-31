@@ -34,10 +34,10 @@ You can customize the script by modifying the following variables at the beginni
 - `CATEGORIES`: The categories to be used in the YAML front matter. Default is `AI`.
 - `TAGS`: The tags to be used in the YAML front matter. Default is `ai`.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Showcases
 
 - [My Tech Blog](https://rabestro.github.io/) - My personal tech blog where I publish my GPT-4 chat sessions.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
