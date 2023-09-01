@@ -23,16 +23,9 @@ create_file_name() {
 }
 
 conversation() {
-  local -r file_json="$1"
-  cat <<EOF
-
-## The AI Conversation Log
-
-$(jq --raw-output '.history[0].messages | map((
-  if .role == "user" then "👤" else "🤖" end
-  )+ " \(.content)\n") | join("\n")' "$file_json")
-
-EOF
+  jq --raw-output '.history[0].messages | map((
+    if .role == "user" then "👤" else "🤖" end
+    )+ " \(.content)\n") | join("\n")' "$1"
 }
 
 has_mermaid() {
@@ -52,7 +45,7 @@ main() {
   echo "Title: $title"
   echo "File: $file_name"
 
-  cat << EOF > "$file_post"
+  cat <<EOF >"$file_post"
 ---
 title: "$title"
 date: $current_date $current_time $TIMEZONE
@@ -61,13 +54,13 @@ tags: [$TAGS]
 mermaid: $(has_mermaid "$file_json")
 ---
 {% raw %}
-
 ## The system prompt used
 
 $prompt
 
-$(conversation "$file_json")
+## The AI Conversation Log
 
+$(conversation "$file_json")
 {% endraw %}
 EOF
 }
